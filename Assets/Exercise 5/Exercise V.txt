@@ -1,0 +1,77 @@
+What is a VCS?
+
+- A VCS, or Version Control system, is a software tool that helps developers manage changes to source code over time. It allows developers to work on the same codebase simultaneously by keeping track of changes
+made by each of them and by also offering them a way to merge their changes together. An history of all changes made is also available, with the option to revert them if needed.
+
+
+
+Why is it important to use a VSC?
+
+- It is important to use a VSC in terms of collaboration: Multiple developers can work on the same codebase at the same time without conflicts (or a minimal amount, merging problems can happen).
+It's also safer to use VSC when developing because of the fact that changes can be made and tested on separate branches, and if an error occurs it doesn't occur on the main version of the code or on the version
+the other developers use.
+
+
+
+What VCS are you usually using?
+
+- I mainly use GIT, but I also often use SVN.
+
+
+
+What workflow would you have in a team of 5 programmers?
+
+- I would set up the workflow as follows:
+1: Set up a repository
+2: Set up a production branch (main branch) and an integration branch. All works would be merged into the integration branch and tested before merging the integration branch into the production one.
+3: Each developer creates branches that are copies of the integration branch for their tasks. Multiple branches can be created by a single developer if he/she works on different tasks (for exemple: a branch for some UI changes
+and a branch for some VFX changes).
+4: The developers test their branches and review their code when their work is done.
+5: After testing their work, if everything is ok they merge their branch(es) to the integration branch
+6: They run tests on the integration branch after merging to ensure that the merge didn't break anything. Automated tests can be used to test the integration branch.
+7: After testing the integration branch it must be merged into the production branch. If it is an update to a live product, the integration branch is merged to the production one once all the
+work that was planned is on it.
+8: The application in production must be monitored. If any error is found, it must be reported using a ticketing system and reported to the development team.
+
+
+
+For the rest, we will assume Git as our VCS. How can you avoid merge commits and keep a linear history?
+
+- To avoid merge commits the developers would need to work on a single and same branch, the main one.
+
+
+
+
+Why is it important to have a linear history and in what case are you allowed to break it (and thus having merge commit)?
+
+- We can break it when multiple developers need to work on different branches
+
+
+
+What is cherry-picking?
+
+-It is used to select a commit from one branch and apply it to another branch.
+
+
+
+What is a rebase? What is the difference between a rebase between two branches and a pull-rebase?
+
+- It allows to move an entire branch to a new base commit
+
+What is a force push? When should you use it or not? What are the consequences?
+
+- It forces the remote branch to accept the changes, even if they conflict with the existing history of the branch. Force pushing can make it difficult to track 
+changes and understand the history of the repository.It can also make it harder to revert changes if necessary, since the history has been altered.
+
+What is LF and CRLF? What should you use and why?
+
+-
+
+
+
+What characters (including case) are you recommending in your naming convention?
+
+- .variables: Lowercase first letter, every work linked together, uppercase letter for each word.
+- .functions/class/structures: Uppercase first letter, every work linked together, uppercase letter for each word.
+
+
